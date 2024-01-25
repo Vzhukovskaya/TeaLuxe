@@ -16,7 +16,6 @@ menuClose.addEventListener('click', () => {
   menuShadow.classList.remove('menu--open');
 });
 
-// Анимация для элементов навигации
 menuLinks.forEach(link => {
   link.addEventListener('mouseover', () => {
     link.style.transition = 'color 0.3s ease';
@@ -27,7 +26,7 @@ menuLinks.forEach(link => {
   });
 });
 
-// Поиск по нажатию на иконку поиска
+// Search
 menuBtn.addEventListener('click', () => {
   menuList.classList.toggle('menu__list--open');
   menuShadow.classList.toggle('menu--open');
@@ -38,20 +37,19 @@ menuClose.addEventListener('click', () => {
   menuShadow.classList.remove('menu--open');
 });
 
-// Открытие поиска по клику на иконку
 searchIcon.addEventListener('click', () => {
   searchInput.classList.toggle('is-visible');
   if (searchInput.classList.contains('is-visible')) {
-    searchInput.focus(); // Автоматически фокусируемся на поле ввода
+    searchInput.focus();
   }
 });
 
-// Предотвращаем закрытие поля поиска при клике на него
+
 searchInput.addEventListener('click', (event) => {
   event.stopPropagation();
 });
 
-// Скрытие поля поиска при клике вне его области
+
 document.addEventListener('click', (event) => {
   if (!searchInput.contains(event.target) && !searchIcon.contains(event.target)) {
     searchInput.classList.remove('is-visible');
