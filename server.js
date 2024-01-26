@@ -1,87 +1,40 @@
 const express = require('express');
-const bodyParser = require('body-parser');
-const session = require('express-session');
-
+const fs = require('fs');
 const app = express();
-const PORT = 5000;
+const cors = require('cors');
 
-app.use(bodyParser.json());
-app.use(session({
-    secret: 'super-secret-key',
-    resave: false,
-    saveUninitialized: true,
-}));
+// Включаем CORS для всех роутов
+app.use(cors());
+app.use(express.json());
 
-// Примерный объект для хранения данных (в реальном приложении используйте базу данных)
-let users = {};
-let subscriptions = [];
-let cart = {};
-
-// Регистрация пользователя
-app.post('/register', (req, res) => {
-    const { username, password, email } = req.body;
-    if (users[username]) {
-        res.status(400).send('Пользователь уже существует');
-    } else {
-        users[username] = { password, email };
-        res.status(200).send('Регистрация успешна');
-    }
-});
-
-// Авторизация пользователя
-app.post('/login', (req, res) => {
-    const { username, password } = req.body;
-    if (users[username] && users[username].password === password) {
-        req.session.user = username;
-        res.status(200).send('Авторизация успешна');
-    } else {
-        res.status(400).send('Неверные учетные данные');
-    }
-});
-
-// Выход из системы
-app.post('/logout', (req, res) => {
-    req.session.destroy();
-    res.status(200).send('Выход выполнен');
-});
-
-// Добавление товара в корзину
-app.post('/cart/add', (req, res) => {
-    const { productId, quantity } = req.body;
-    const user = req.session.user;
-    if (!user) {
-        res.status(401).send('Необходима авторизация');
-        return;
-    }
-
-    if (!cart[user]) {
-        cart[user] = {};
-    }
-    cart[user][productId] = (cart[user][productId] || 0) + quantity;
-    res.status(200).send('Товар добавлен в корзину');
-});
-
-// Просмотр корзины
-app.get('/cart', (req, res) => {
-    const user = req.session.user;
-    if (!user) {
-        res.status(401).send('Необходима авторизация');
-    } else {
-        res.status(200).json(cart[user] || {});
-    }
-});
-
-// Подписка на рассылку
 app.post('/subscribe', (req, res) => {
     const { email } = req.body;
-    if (subscriptions.includes(email)) {
-        res.status(400).send('Этот email уже подписан');
-    } else {
-        subscriptions.push(email);
-        res.status(200).send('Подписка оформлена');
+
+    if (!email) {
+        return res.status(400).send('Email is required');
     }
+
+    const filename = 'subscriptions.json';
+    fs.readFile(filename, (err, data) => {
+        let subscriptions = [];
+        if (!err) {
+            subscriptions = JSON.parse(data.toString());
+        }
+
+        if (subscriptions.some(subscription => subscription.useremail === email)) {
+            return res.status(400).send('Email already subscribed');
+        }
+
+        subscriptions.push({ useremail: email });
+
+        fs.writeFile(filename, JSON.stringify(subscriptions, null, 2), (err) => {
+            if (err) {
+                return res.status(500).send('Error saving the email');
+            }
+            res.status(200).send('Subscribed successfully');
+        });
+    });
 });
 
-app.listen(PORT, () => {
-    console.log(`Сервер запущен на http://localhost:${PORT}`);
-});
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));

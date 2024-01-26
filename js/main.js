@@ -32,18 +32,12 @@ menuBtn.addEventListener('click', () => {
   menuShadow.classList.toggle('menu--open');
 });
 
-menuClose.addEventListener('click', () => {
-  menuList.classList.remove('menu__list--open');
-  menuShadow.classList.remove('menu--open');
-});
-
 searchIcon.addEventListener('click', () => {
   searchInput.classList.toggle('is-visible');
   if (searchInput.classList.contains('is-visible')) {
     searchInput.focus();
   }
 });
-
 
 searchInput.addEventListener('click', (event) => {
   event.stopPropagation();
@@ -55,3 +49,59 @@ document.addEventListener('click', (event) => {
     searchInput.classList.remove('is-visible');
   }
 });
+
+// Подписка на рассылку:
+document.addEventListener('DOMContentLoaded', function () {
+  const mailingListForm = document.querySelector('.mailing-list__form');
+  const messageBox = document.querySelector('.mailing-list__message');
+
+  mailingListForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const emailInput = document.querySelector('.mailing-list__email').value;
+    const isConsentChecked = document.querySelector('.checkbox').checked;
+
+    if (!emailInput) {
+      showMessage('Please enter your email.', 'error');
+      return;
+    }
+
+    if (!isConsentChecked) {
+      showMessage('Please consent to data processing.', 'error');
+      return;
+    }
+
+
+    sendSubscriptionData(emailInput, isConsentChecked);
+    showMessage('Thank you for subscribing!', 'success');
+  });
+});
+
+function showMessage(message, type) {
+  const messageBox = document.querySelector('.mailing-list__message');
+  messageBox.textContent = message;
+  messageBox.style.display = 'block';
+  messageBox.className = 'mailing-list__message ' + type;
+}
+
+function sendSubscriptionData(email) {
+  fetch('http://localhost:3000/subscribe', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ email: email })
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      showMessage('Thank you for subscribing!', 'success');
+    })
+    .catch((error) => {
+      showMessage('Error: ' + error.message, 'error');
+    });
+}
+

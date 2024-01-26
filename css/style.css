@@ -326,7 +326,7 @@ body {
 }
 
 .mailing-list {
-  padding: 100px 0;
+  padding: 100px 0 80px;
   background-color: #F7F2EA;
   background-image: url(../images/mailing-bg.png);
   background-repeat: no-repeat;
@@ -430,6 +430,24 @@ body {
   background-color: #151618;
   top: 1px;
   left: 1px;
+}
+
+.mailing-list__message {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 4px;
+  text-align: center;
+  display: none;
+}
+
+.mailing-list__message.error {
+  margin-top: 50px;
+  color: #9c1414;
+}
+
+.mailing-list__message.success {
+  margin-top: 50px;
+  color: #297929;
 }
 
 .prioritise {
