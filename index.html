@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" href="images/logo.svg">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
 </head>
 
 <body>
@@ -24,7 +25,7 @@
       <div class="container">
         <div class="header__inner">
           <a class="logo" href="#">
-            <img src="images/logo.svg" alt="TealuxE">
+            <i class="fa-solid fa-leaf"></i>
           </a>
           <nav class="menu">
             <button class="menu__btn">
@@ -74,7 +75,7 @@
                   </li>
                   <li class="mobile-actions__item">
                     <a class="mobile-actions__link" href="#">
-                      <img src="images/user.svg" alt="">
+                      <i class="fa-regular fa-user"></i>
                     </a>
                   </li>
                   <li class="mobile-actions__item">
@@ -89,17 +90,17 @@
           <ul class="user-actions">
             <li class="user-actions__item">
               <a class="user-actions__link" href="#">
-                <img src="images/cart.svg" alt="">
+                <i class="fa-solid fa-bag-shopping"></i>
               </a>
             </li>
             <li class="user-actions__item">
               <a class="user-actions__link" href="#">
-                <img src="images/user.svg" alt="">
+                <i class="fa-solid fa-user"></i>
               </a>
             </li>
             <li class="user-actions__item user-actions__item-search">
               <a class="user-actions__link" href="#">
-                <img src="images/search.svg" alt="">
+                <i class="fa-solid fa-magnifying-glass"></i>
               </a>
               <input type="search" class="search-input" placeholder="Search...">
             </li>
@@ -129,7 +130,6 @@
         <div class="container">
           <h2 class="title assortment__title">Explore our Collections</h2>
           <ul class="assortment__list">
-            <!-- li.assortment__item*5>img.assortment__img[src=images/black.png]+p.assortment__name{Black} -->
             <li class="assortment__item">
               <img class="assortment__img" src="images/black.jpg" alt="">
               <p class="assortment__name">Black</p>
@@ -312,6 +312,13 @@
           </ul>
         </div>
       </section>
+      <div class="map-container container">
+        <h2 class="title">Global Tea Regions</h2>
+        <p class="map-container__descr">Explore the map to discover the fascinating world of tea production. From the
+          lush fields of Asia to the unique climates of Africa and South America, each region offers distinct flavors
+          and traditions. Click on the markers to learn more about tea cultivation in these areas.</p>
+      </div>
+      <div id="teaMap"></div>
     </main>
     <footer class="footer">
       <div class="container">
@@ -389,22 +396,22 @@
                   <!-- li.footer__social-item*4>a.footer__social-link[href=#]>img[src=images/youtube.svg] -->
                   <li class="footer__social-item">
                     <a class="footer__social-link" href="#">
-                      <img src="images/facebook.svg" alt="">
+                      <i class="fa-brands fa-facebook"></i>
                     </a>
                   </li>
                   <li class="footer__social-item">
                     <a class="footer__social-link" href="#">
-                      <img src="images/youtube.svg" alt="">
+                      <i class="fa-brands fa-youtube"></i>
                     </a>
                   </li>
                   <li class="footer__social-item">
                     <a class="footer__social-link" href="#">
-                      <img src="images/instagram.svg" alt="">
+                      <i class="fa-brands fa-instagram"></i>
                     </a>
                   </li>
                   <li class="footer__social-item">
                     <a class="footer__social-link" href="#">
-                      <img src="images/twitter.svg" alt="">
+                      <i class="fa-brands fa-twitter"></i>
                     </a>
                   </li>
                 </ul>
@@ -413,7 +420,7 @@
           </div>
         </div>
         <div class="footer__bottom">
-          <p class="footer__copy">© Tealuxe, 2023</p>
+          <p class="footer__copy">© Tealuxe, 2023 <i class="fa-solid fa-leaf"></i></p>
           <ul class="partners-logo">
             <!-- li.partners-logo__item*4>img[src=images/partners-$.png] -->
             <li class="partners-logo__item">
@@ -436,6 +443,8 @@
 
 
   <script src="js/main.js"></script>
+  <script src="https://kit.fontawesome.com/944885f069.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 </body>
 
 </html>
