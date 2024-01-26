@@ -9,6 +9,9 @@ Here you will discover a rich selection of teas, as well as numerous interesting
 - **Tea Blog**: Stay updated with our blog posts about tea culture, health benefits, brewing techniques, and more.
 - **Subscription Service**: Subscribe to our newsletter for the latest news, promotions, and exclusive offers.
 - **Responsive Design**: Enjoy a seamless experience on any device, whether you're at home or on the go.
+  
+## Demo
+Check out the live demo of TeaLuxe (https://vzhukovskaya.github.io/TeaLuxe/).
 
 ## Technologies
 
