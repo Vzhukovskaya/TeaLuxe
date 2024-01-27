@@ -1,0 +1,26 @@
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
+.animated-gradient {
+  background: linear-gradient(-45deg, #B8B58B, #F7F2EA, #d4cfc8, #B8B58B);
+  background-size: 400% 400%;
+  animation: gradient 18s ease infinite; }
+
+::-webkit-scrollbar {
+  width: 13px;
+  height: 15px; }
+
+::-webkit-scrollbar-track {
+  background: #fff; }
+
+::-webkit-scrollbar-thumb {
+  background: #3D4733; }
+
+::-webkit-scrollbar-thumb:hover {
+  background: #151618; }
+
+/*# sourceMappingURL=output.css.map */

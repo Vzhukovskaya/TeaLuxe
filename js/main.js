@@ -27,11 +27,6 @@ menuLinks.forEach(link => {
 });
 
 // Search
-menuBtn.addEventListener('click', () => {
-  menuList.classList.toggle('menu__list--open');
-  menuShadow.classList.toggle('menu--open');
-});
-
 searchIcon.addEventListener('click', () => {
   searchInput.classList.toggle('is-visible');
   if (searchInput.classList.contains('is-visible')) {
@@ -50,7 +45,28 @@ document.addEventListener('click', (event) => {
   }
 });
 
-// Подписка на рассылку:
+// Modal
+document.querySelectorAll('.open-modal-btn').forEach(button => {
+  button.addEventListener('click', function () {
+    const modalId = this.dataset.modal;
+    const modal = document.getElementById(modalId);
+    modal.style.display = "block";
+  });
+});
+
+document.querySelectorAll('.close').forEach(closeButton => {
+  closeButton.addEventListener('click', function () {
+    this.parentElement.parentElement.style.display = "none";
+  });
+});
+
+window.onclick = function (event) {
+  if (event.target.classList.contains('modal')) {
+    event.target.style.display = "none";
+  }
+};
+
+// Subscribe to the newsletter
 document.addEventListener('DOMContentLoaded', function () {
   const mailingListForm = document.querySelector('.mailing-list__form');
   const messageBox = document.querySelector('.mailing-list__message');
@@ -105,6 +121,7 @@ function sendSubscriptionData(email) {
     });
 }
 
+// Map
 document.addEventListener('DOMContentLoaded', function () {
   const map = L.map('teaMap').setView([20, 0], 2);
 

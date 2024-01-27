@@ -11,14 +11,14 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;1,300&family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/output.css">
   <link rel="icon" href="images/logo.svg">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
 </head>
 
 <body>
-
   <div class="wrapper">
     <header class="header">
       <div class="menu--close"></div>
@@ -217,7 +217,7 @@
                 <a class="main-blog__item-link" href="#">Read</a>
               </div>
             </li>
-            <li class="main-blog__item">
+            <li class="main-blog__item ">
               <img class="main-blog__item-img" src="images/blog-2.jpg" alt="">
               <div class="main-blog__item-content">
                 <h3 class="main-blog__item-title">
@@ -288,37 +288,93 @@
         <div class="container">
           <h2 class="title">We Prioritise</h2>
           <ul class="prioritise__list">
-            <!-- li.prioritise__item*4>h4.prioritise__title{$}+p.prioritise__text{$}+img[src=images/prioritise-$.svg] -->
             <li class="prioritise__item">
               <h4 class="prioritise__title">Single garden teas</h4>
+              <button class="open-modal-btn" data-modal="singleGardenModal">Read More</button>
               <p class="prioritise__text">Complete transparency</p>
               <img src="images/prioritise-1.svg" alt="">
+              <div id="singleGardenModal" class="modal">
+                <div class="modal-content">
+                  <span class="close">&times;</span>
+                  <h2>Single Garden Teas - The Essence of Purity</h2>
+                  <p>Single garden teas epitomize the purest form of tea cultivation. These teas are exclusively sourced
+                    from single tea estates, ensuring each brew reflects the unique character and subtleties of its
+                    origin. By focusing on single gardens, we guarantee a level of transparency and traceability that
+                    mass-produced teas can't match. Experience the distinct taste profiles that vary from garden to
+                    garden, bringing you closer to the very soul of the tea leaf.</p>
+                </div>
+              </div>
             </li>
             <li class="prioritise__item">
               <h4 class="prioritise__title">Only Loose leaf tea</h4>
+              <button class="open-modal-btn" data-modal="customerSupportModal">Read More</button>
               <p class="prioritise__text">Best Drinking Experience</p>
               <img src="images/prioritise-2.svg" alt="">
+              <div id="looseLeafModal" class="modal">
+                <div class="modal-content">
+                  <span class="close">&times;</span>
+                  <h2>Only Loose Leaf Tea - A Richer Experience</h2>
+                  <p>Loose leaf tea offers a superior tea-drinking experience, cherished by connoisseurs for its
+                    full-bodied flavor and rich aroma. Unlike traditional tea bags, loose leaf tea is made from whole,
+                    unbroken leaves, ensuring the highest quality and taste. Each leaf unfurls in the hot water,
+                    releasing its full potential of flavors and aromas. This method of brewing tea not only enhances
+                    your sensory experience but also allows for better extraction of antioxidants, making it a healthier
+                    choice. Whether you are a seasoned tea enthusiast or new to the world of tea, loose leaf tea
+                    promises a journey of discovery with every cup. Revel in the luxury of a perfectly brewed cup of
+                    loose leaf tea, where every sip is a testament to purity and tradition.</p>
+                </div>
+              </div>
             </li>
             <li class="prioritise__item">
               <h4 class="prioritise__title">Customer support</h4>
+              <button class="open-modal-btn" data-modal="customerSupportModal">Read More</button>
               <p class="prioritise__text">No bots, no automated replies</p>
               <img src="images/prioritise-3.svg" alt="">
+              <div id="customerSupportModal" class="modal">
+                <div class="modal-content">
+                  <span class="close">&times;</span>
+                  <h2>Customer Support - At Your Service</h2>
+                  <p>Our dedicated customer support team is here to assist you with any inquiries or concerns you may
+                    have. At Tealuxe, we believe in building strong relationships with our customers, and that starts
+                    with exceptional support. Whether you need advice on selecting the perfect tea, assistance with an
+                    order, or any other tea-related query, our knowledgeable team is ready to help. We pride ourselves
+                    on our quick response times and personalized service. No bots, no automated replies - just real,
+                    friendly people who understand and share your passion for tea. Experience customer service that is
+                    as warm and inviting as a freshly brewed cup of your favorite tea.</p>
+                </div>
+              </div>
             </li>
             <li class="prioritise__item">
               <h4 class="prioritise__title">Fast shipping</h4>
+              <button class="open-modal-btn" data-modal="customerSupportModal">Read More</button>
               <p class="prioritise__text">Save, Convenient, Reliable</p>
               <img src="images/prioritise-4.svg" alt="">
+              <div id="fastShippingModal" class="modal">
+                <div class="modal-content">
+                  <span class="close">&times;</span>
+                  <h2>Fast Shipping - Swift and Reliable Delivery</h2>
+                  <p>Enjoy swift and reliable shipping with every order at Tealuxe. We understand that waiting for your
+                    favorite tea can be challenging, which is why we've streamlined our shipping process to ensure
+                    prompt and efficient delivery. Whether you're ordering from nearby or from the other side of the
+                    world, we work tirelessly to get your tea to you as quickly as possible. Our trusted shipping
+                    partners and carefully crafted logistics strategies mean you can sit back, relax, and look forward
+                    to the arrival of your premium teas without any unnecessary delays. Your next cup of exquisite tea
+                    is just a quick delivery away.</p>
+                </div>
+              </div>
             </li>
           </ul>
         </div>
       </section>
-      <div class="map-container container">
-        <h2 class="title">Global Tea Regions</h2>
-        <p class="map-container__descr">Explore the map to discover the fascinating world of tea production. From the
-          lush fields of Asia to the unique climates of Africa and South America, each region offers distinct flavors
-          and traditions. Click on the markers to learn more about tea cultivation in these areas.</p>
+      <div class="animated-gradient">
+        <div class="map-container container">
+          <h2 class="title">Global Tea Regions</h2>
+          <p class="map-container__descr">Explore the map to discover the fascinating world of tea production. From the
+            lush fields of Asia to the unique climates of Africa and South America, each region offers distinct flavors
+            and traditions. Click on the markers to learn more about tea cultivation in these areas.</p>
+        </div>
+        <div id="teaMap"></div>
       </div>
-      <div id="teaMap"></div>
     </main>
     <footer class="footer">
       <div class="container">
@@ -357,16 +413,10 @@
               <a class="footer__company-link" href="#">Our Blog</a>
             </li>
             <li class="footer__company-item">
-              <a class="footer__company-link" href="#">FAQ</a>
-            </li>
-            <li class="footer__company-item">
               <a class="footer__company-link" href="#">Shipping & Delivery</a>
             </li>
             <li class="footer__company-item">
               <a class="footer__company-link" href="#">Refund policy</a>
-            </li>
-            <li class="footer__company-item">
-              <a class="footer__company-link" href="#">Terms of Service</a>
             </li>
           </ul>
           <blockquote class="footer__blockquote">
@@ -393,7 +443,6 @@
               </li>
               <li class="footer__social">
                 <ul class="footer__social-list">
-                  <!-- li.footer__social-item*4>a.footer__social-link[href=#]>img[src=images/youtube.svg] -->
                   <li class="footer__social-item">
                     <a class="footer__social-link" href="#">
                       <i class="fa-brands fa-facebook"></i>
@@ -422,7 +471,6 @@
         <div class="footer__bottom">
           <p class="footer__copy">© Tealuxe, 2023 <i class="fa-solid fa-leaf"></i></p>
           <ul class="partners-logo">
-            <!-- li.partners-logo__item*4>img[src=images/partners-$.png] -->
             <li class="partners-logo__item">
               <img src="images/partners-1.svg" alt="">
             </li>
