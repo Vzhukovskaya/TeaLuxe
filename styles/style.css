@@ -569,12 +569,13 @@ body {
 }
 
 .open-modal-btn {
-  background-color: #fff;
-  border: 1px solid #3D4733;
-  padding: 12px 41px;
-  font-family: 'Open Sans', sans-serif;
   font-size: 20px;
   font-weight: 300;
+  background-color: #fff;
+  border: 1px solid #3D4733;
+  color: #3D4733;
+  padding: 12px 41px;
+  font-family: 'Open Sans', sans-serif;
   cursor: pointer;
   transition: transform 0.6s ease-in-out;
 }
@@ -1096,8 +1097,20 @@ body {
     padding: 60px 0;
   }
 
+  .main-blog__item {
+    flex-direction: column;
+  }
+
   .main-blog__item-img {
     max-width: 230px;
+  }
+
+  .main-blog__item-link::after {
+    display: none;
+  }
+
+  .main-blog__item-title {
+    min-height: 0;
   }
 
   .mailing-list {
@@ -1116,14 +1129,20 @@ body {
   .mailing-list__email {
     width: 220px;
     margin-right: 20px;
+    margin: 0 auto;
   }
 
   .mailing-list__btn {
     padding: 8px 30px;
+    margin: 20px auto;
   }
 
   .prioritise {
     padding: 60px 0;
+  }
+
+  .map-container__descr {
+    font-size: 19px;
   }
 
   .footer__inner {
@@ -1187,7 +1206,7 @@ body {
   }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 391px) {
   .title {
     margin-bottom: 30px;
     font-size: 24px;
@@ -1199,6 +1218,12 @@ body {
 
   .user-actions__item-search {
     margin-left: 0;
+  }
+
+  .menu__list {
+    padding: 0;
+    padding-top: 50px;
+    width: 100%;
   }
 
   .header__inner {
@@ -1233,6 +1258,10 @@ body {
     margin-bottom: 80px;
   }
 
+  .assortment__list {
+    padding: 0;
+  }
+
   .reviews__item {
     flex-basis: 100%;
   }
@@ -1261,6 +1290,11 @@ body {
 
   .main-blog__list {
     justify-content: center;
+    padding: 0;
+  }
+
+  .mailing-list {
+    padding: 50px 10px;
   }
 
   .main-blog__item-title {
@@ -1286,11 +1320,23 @@ body {
 
   .prioritise__list {
     gap: 40px 100px;
+    padding: 0;
+  }
+
+  .open-modal-btn {
+    font-size: 13px;
+    padding: 12px 20px;
+  }
+
+  .modal p {
+    font-size: 14px;
+    margin: 15px 0;
+    padding: 20px;
   }
 
   .footer__company {
-    padding-right: 15px;
-    margin-right: 0;
+    margin: 0 auto;
+    padding: 0;
   }
 
   .footer__nav {
@@ -1305,5 +1351,16 @@ body {
   .footer__social {
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    margin: 0 10px;
+    text-align: center;
+  }
+
+  .partners-logo {
+    margin: 20px auto;
+    padding: 0;
   }
 }
