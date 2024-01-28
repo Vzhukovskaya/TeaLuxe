@@ -45,6 +45,23 @@ document.addEventListener('click', (event) => {
   }
 });
 
+// Swiper
+document.addEventListener('DOMContentLoaded', () => {
+  const swiper = new Swiper('.reviews-swiper', {
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 30,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    }
+  });
+});
+
 // Modal
 document.querySelectorAll('.open-modal-btn').forEach(button => {
   button.addEventListener('click', function () {

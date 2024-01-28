@@ -251,6 +251,21 @@ body {
   padding: 60px 0;
 }
 
+.reviews__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.reviews__icon {
+  font-size: 24px;
+  color: #3D4733;
+  border: 1px solid #3D4733;
+  padding: 20px;
+  border-radius: 50px;
+
+}
+
 .reviews__list {
   display: flex;
   gap: 0 26px;
@@ -262,13 +277,56 @@ body {
 }
 
 .reviews__text {
-  font-size: 20px;
+  max-width: 550px;
+  font-size: 24px;
   font-style: italic;
-  margin-bottom: 10px;
+  text-align: center;
+  margin: 48px auto;
 }
 
 .reviews__name {
+  display: flex;
+  justify-content: center;
   font-weight: 600;
+  margin-bottom: 40px;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  background: none;
+  border: none;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 10;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: '\f104';
+  color: #333;
+  font-size: 10px;
+}
+
+.swiper-button-next::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: '\f105';
+  color: #333;
+  font-size: 10px;
+}
+
+.swiper-button-prev {
+  left: 10px;
+}
+
+.swiper-button-next {
+  right: 10px;
 }
 
 .main-blog {
@@ -305,36 +363,27 @@ body {
 }
 
 .main-blog__item-link {
-  font-size: 19px;
-  position: relative;
-  margin-top: auto;
+  font-size: 17px;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  border: 1px solid #151618;
   transition: transform 0.6s ease-in-out;
 }
 
 .main-blog__item-link:hover {
-  -webkit-transform: scale(2);
-  -ms-transform: scale(0.3);
-  transform: scale(0.8);
-  transition: transform 0.6s ease-in-out;
+  background-color: #F7F2EA;
+  opacity: 2;
 }
 
-.main-blog__item-link::after {
-  content: '';
-  background-image: url(../images/arrow.svg);
-  background-repeat: no-repeat;
-  position: absolute;
-  width: 10px;
-  height: 15px;
-  margin-left: 8px;
-  bottom: 3px;
-}
 
 .main-blog__link {
   font-size: 19px;
   padding: 12px 40px;
   display: flex;
   justify-content: center;
-  margin: 72px auto 0;
+  margin: 80px auto 0;
   border: 1px solid #151618;
   width: 152px;
   transition: transform 0.6s ease-in-out;
@@ -404,12 +453,13 @@ body {
 }
 
 .mailing-list__btn {
-  background-color: #fff;
-  border: 1px solid #151618;
-  padding: 12px 41px;
   font-family: 'Open Sans', sans-serif;
   font-size: 20px;
   font-weight: 300;
+  background-color: #fff;
+  color: #3D4733;
+  border: 1px solid #151618;
+  padding: 12px 41px;
   cursor: pointer;
   transition: transform 0.6s ease-in-out;
 }
@@ -650,7 +700,7 @@ body {
 
 .footer__products-link:hover,
 .footer__company-link:hover {
-  font-weight: 500;
+  font-weight: 600;
   color: #3D4733;
 }
 
@@ -1115,7 +1165,7 @@ body {
   }
 
   .mailing-list {
-    padding: 50px 0;
+    padding: 0;
   }
 
   .mailing-list__text {
@@ -1180,7 +1230,7 @@ body {
   }
 
   .footer__copy {
-    margin-right: auto;
+    margin-right: 0;
   }
 
   .footer__products {

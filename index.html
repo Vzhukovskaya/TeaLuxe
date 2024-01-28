@@ -16,6 +16,8 @@
   <link rel="stylesheet" href="styles/output.css">
   <link rel="icon" href="images/logo.svg">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
 </head>
 
 <body>
@@ -155,52 +157,68 @@
       </section>
       <section class="reviews">
         <div class="container">
-          <h2 class="title">
-            What our Clients say
-          </h2>
-          <ul class="reviews__list">
-            <li class="reviews__item">
-              <blockquote>
-                <p class="reviews__text">
-                  "As a tea enthusiast, I have tried teas from all over the world, but this tea store truly stands out.
-                  Their teas are of
-                  the highest quality and the variety is impressive. This is definitely a tea store that every tea lover
-                  should visit."
-                </p>
-                <cite class="reviews__name">Alice</cite>
-              </blockquote>
-            </li>
-            <li class="reviews__item">
-              <blockquote>
-                <p class="reviews__text">
-                  "This tea store is my go-to for all my tea needs. Their selection is unbeatable and the quality of
-                  their
-                  teas is exceptional."
-                </p>
-                <cite class="reviews__name">Mad-Hatter</cite>
-              </blockquote>
-            </li>
-            <li class="reviews__item">
-              <blockquote>
-                <p class="reviews__text">
-                  "If you're a tea lover, you must visit this tea store. The selection is vast and the quality is
-                  outstanding. I guarantee
-                  you won't be disappointed."
-                </p>
-                <cite class="reviews__name">Dormouse</cite>
-              </blockquote>
-            </li>
-            <li class="reviews__item">
-              <blockquote>
-                <p class="reviews__text">
-                  "I am not a big tea drinker, but this tea store has converted me. I highly recommend this tea store to
-                  anyone looking
-                  for a high-quality tea experience."
-                </p>
-                <cite class="reviews__name">March Hare</cite>
-              </blockquote>
-            </li>
-          </ul>
+          <h2 class="title">What our Clients say</h2>
+          <div class="swiper reviews-swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <blockquote>
+                  <div class="reviews__content">
+                    <i class="fa-regular fa-user reviews__icon"></i>
+                    <p class="reviews__text">"Every visit to this tea store is like a mini-adventure. The variety and
+                      quality of their teas are unmatched. It's my sanctuary for finding peace and relaxation."</p>
+                    <cite class="reviews__name">Alice Bennett</cite>
+                  </div>
+                </blockquote>
+              </div>
+              <div class="swiper-slide">
+                <blockquote>
+                  <div class="reviews__content">
+                    <i class="fa-regular fa-user reviews__icon"></i>
+                    <p class="reviews__text">"The ambiance, the selection, and the knowledge of the staff make this the
+                      best tea shop I've ever visited. A true gem for tea lovers!"</p>
+                    <cite class="reviews__name">Oliver Thompson</cite>
+                  </div>
+                </blockquote>
+              </div>
+              <div class="swiper-slide">
+                <blockquote>
+                  <div class="reviews__content">
+                    <i class="fa-regular fa-user reviews__icon"></i>
+                    <p class="reviews__text">"If you're a tea lover, you must visit this tea store. The selection is
+                      vast
+                      and the quality is outstanding. I guarantee
+                      you won't be disappointed."</p>
+                    <cite class="reviews__name">Melany Love</cite>
+                  </div>
+                </blockquote>
+              </div>
+              <div class="swiper-slide">
+                <blockquote>
+                  <div class="reviews__content">
+                    <i class="fa-regular fa-user reviews__icon"></i>
+                    <p class="reviews__text">"I am not a big tea drinker, but this tea store has converted me. I highly
+                      recommend this tea store to
+                      anyone looking
+                      for a high-quality tea experience."</p>
+                    <cite class="reviews__name">Tom Doowe</cite>
+                  </div>
+                </blockquote>
+              </div>
+              <div class="swiper-slide">
+                <blockquote>
+                  <div class="reviews__content">
+                    <i class="fa-regular fa-user reviews__icon"></i>
+                    <p class="reviews__text">"Their collection of green teas is astounding. Each one has a unique flavor
+                      profile that's both refreshing and soothing."</p>
+                    <cite class="reviews__name">Isabella Clark</cite>
+                  </div>
+                </blockquote>
+              </div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-pagination"></div>
+          </div>
         </div>
       </section>
       <section class="main-blog">
@@ -214,7 +232,7 @@
                   Tea Time Travels: Funny Moments from Around the World
                 </h3>
                 <a class="main-blog__item-author" href="#">by Robinson Crusoe</a>
-                <a class="main-blog__item-link" href="#">Read</a>
+                <a class="main-blog__item-link" href="#">Read More</a>
               </div>
             </li>
             <li class="main-blog__item ">
@@ -224,7 +242,7 @@
                   The Role of Tea in Mental Health
                 </h3>
                 <a class="main-blog__item-author" href="#">by Joker</a>
-                <a class="main-blog__item-link" href="#">Read</a>
+                <a class="main-blog__item-link" href="#">Read More</a>
               </div>
             </li>
             <li class="main-blog__item">
@@ -234,7 +252,7 @@
                   Tea-rific Tales: Hilarious Stories from Tea Lovers
                 </h3>
                 <a class="main-blog__item-author" href="#">by Casper the Friendly Ghost</a>
-                <a class="main-blog__item-link" href="#">Read</a>
+                <a class="main-blog__item-link" href="#">Read More</a>
               </div>
             </li>
             <li class="main-blog__item">
@@ -244,7 +262,7 @@
                   Tea and Caffeine: Effects on the Brain and Behavior
                 </h3>
                 <a class="main-blog__item-author" href="#">by Author Authorius</a>
-                <a class="main-blog__item-link" href="#">Read</a>
+                <a class="main-blog__item-link" href="#">Read More</a>
               </div>
             </li>
           </ul>
@@ -493,6 +511,7 @@
   <script src="js/main.js"></script>
   <script src="https://kit.fontawesome.com/944885f069.js" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </body>
 
 </html>
