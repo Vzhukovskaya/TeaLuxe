@@ -569,12 +569,12 @@ body {
 }
 
 .open-modal-btn {
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 300;
   background-color: #fff;
   border: 1px solid #3D4733;
   color: #3D4733;
-  padding: 12px 41px;
+  padding: 12px 30px;
   font-family: 'Open Sans', sans-serif;
   cursor: pointer;
   transition: transform 0.6s ease-in-out;
@@ -937,9 +937,14 @@ body {
     display: none;
   }
 
+  .footer__inner {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   .footer__blockquote {
     display: none;
   }
+
 }
 
 @media (max-width: 768px) {
@@ -1103,10 +1108,6 @@ body {
 
   .main-blog__item-img {
     max-width: 230px;
-  }
-
-  .main-blog__item-link::after {
-    display: none;
   }
 
   .main-blog__item-title {
