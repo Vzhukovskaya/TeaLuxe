@@ -25,7 +25,7 @@ TeaLuxe is built using modern web technologies:
 
 ## Demo
 
-Check out the live demo of the project [here](https://vzhukovskaya.github.io/TeaLuxe/).
+Check out the live demo of the project [here](https://vzhukovskaya.github.io/TeaLuxe/)
 
 ## Setup and Installation
 
