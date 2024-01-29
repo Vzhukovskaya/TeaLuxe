@@ -7,7 +7,7 @@ It offers a unique experience for tea enthusiasts to explore different tea varie
 
 - **Explore Tea Collections**: Discover a wide range of teas including Black, Green, White, Oolong, and Pu-erh.
 - **Tea Blog**: Stay updated with our latest blog posts about tea and its culture.
-- **Client Reviews** : : Read what our clients say about their experiences with different teas, presented in a dynamic slider format.
+- **Client Reviews** : Read what our clients say about their experiences with different teas, presented in a dynamic slider format.
 - **Tea Subscription**: Join our newsletter to get the latest updates on new teas, promotions, and special offers.
 - **Interactive Tea Map**: Explore tea-producing regions around the world with our interactive map.
 - **Responsive Design**: The site is fully responsive, offering a seamless experience on various devices.
