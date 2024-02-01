@@ -14,14 +14,22 @@ It offers a unique experience for tea enthusiasts to explore different tea varie
 
 ## Technology
 
-TeaLuxe is built using modern web technologies:
+- **Front-end**:
+  - `HTML`: For structuring web pages.
+  - `CSS`: For styling web pages.
+  - `JavaScript`: For dynamic client-side interactions.
+  - `SCSS`: For advanced CSS styling with a preprocessor.
+  - `JS Slider Library`: For creating responsive and interactive client reviews sliders.
 
-- HTML, CSS, and JavaScript for front-end development.
-- SCSS for advanced styling.
-- JS Slider Library for creating the responsive and interactive client review.
-- Leaflet.js for interactive map functionality.
-- Node.js and Express.js for back-end server handling.
-- MongoDB for database management (initially planned, replaced with JSON file storage).
+- **Interactive Map**:
+  - `Leaflet.js`: For adding interactive map functionality.
+
+- **Back-end**:
+  - `Node.js`: For server-side scripting.
+  - `Express.js`: For handling server-side logic and routing.
+
+- **Database Management**:
+  - Initially planned with `MongoDB`, but replaced with `JSON` file storage for data management.
 
 ## Demo
 
